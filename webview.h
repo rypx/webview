@@ -1161,9 +1161,9 @@ static int DisplayHTMLPage(struct webview *w) {
 
     for (*loopThisP; *q = *loopThisP;
          loopThisP++, q++) {
-      if (*q == '%' && *(p + 1) && *(p + 2)) {
-        sscanf(p + 1, "%02x", q);
-        p = p + 2;
+      if (*q == '%' && *(loopThisP + 1) && *(loopThisP + 2)) {
+        sscanf(loopThisP + 1, "%02x", q);
+        loopThisP = loopThisP + 2;
       }
     }
 
