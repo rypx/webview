@@ -1159,8 +1159,8 @@ static int DisplayHTMLPage(struct webview *w) {
     char *q = url;
     const char *loopThisP = webview_url + strlen(WEBVIEW_DATA_URL_PREFIX);
 
-    for (loopThisP; *q = *p;
-         p++, q++) {
+    for (*loopThisP; *q = *loopThisP;
+         loopThisP++, q++) {
       if (*q == '%' && *(p + 1) && *(p + 2)) {
         sscanf(p + 1, "%02x", q);
         p = p + 2;
